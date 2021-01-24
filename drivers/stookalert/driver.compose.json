@@ -1,0 +1,23 @@
+{
+  "id": "stookalert",
+  "name": {
+    "en": "StookAlert",
+    "nl": "StookAlert"
+  },
+  "class": "sensor",
+  "capabilities": [
+    "alarm_generic"
+  ],
+  "pair": [{
+	"id": "list_devices",
+	"template": "list_devices",
+	"navigation": {"next": "add_my_devices"}
+  },{
+	"id": "add_my_devices",
+	"template": "add_devices"
+  }],
+  "images": {
+    "large": "/drivers/stookalert/assets/images/large.png",
+    "small": "/drivers/stookalert/assets/images/small.png"
+  }
+}

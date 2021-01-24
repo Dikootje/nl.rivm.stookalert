@@ -1,0 +1,14 @@
+{
+  "name": "nl.rivm.stookalert",
+  "version": "1.0.0",
+  "main": "app.js",
+  "dependencies": {
+    "node-fetch": "^2.6.1",
+    "uuid": "^3.4.0"
+  },
+  "devDependencies": {
+    "homey": "^2.9.5",
+	"node-fetch": "^2.6.1",
+    "uuid": "^3.4.0"
+  }
+}

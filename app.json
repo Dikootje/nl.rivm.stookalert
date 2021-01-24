@@ -1,0 +1,70 @@
+{
+  "id": "nl.rivm.stookalert",
+  "version": "1.0.0",
+  "compatibility": ">=1.5.0",
+  "sdk": 2,
+  "name": {
+    "en": "RIVM fireplace alert",
+    "nl": "RIVM Stookalert"
+  },
+  "description": {
+    "en": "Adds RIVM alerts when it's discouraged to light the fireplace",
+    "nl": "Laat weten wanneer het RIVM verzoekt om geen openhaard aan te steken. "
+  },
+  "category": [
+    "climate"
+  ],
+  "tags": {
+    "nl": [
+      "RIVM",
+      "Openhaard",
+      "StookAlert"
+    ]
+  },
+  "author": {
+    "name": "D B",
+    "email": "homeys@dikobaken.nl"
+  },
+  "contributing": {
+    "donate": {
+      "paypal": {
+        "username": "Dikootje"
+      }
+    }
+  },
+  "permissions": [],
+  "images": {
+    "large": "/assets/images/large.png",
+    "small": "/assets/images/small.png"
+  },
+  "drivers": [
+    {
+      "id": "stookalert",
+      "name": {
+        "en": "StookAlert",
+        "nl": "StookAlert"
+      },
+      "class": "sensor",
+      "capabilities": [
+        "alarm_generic"
+      ],
+      "pair": [
+        {
+          "id": "list_devices",
+          "template": "list_devices",
+          "navigation": {
+            "next": "add_my_devices"
+          }
+        },
+        {
+          "id": "add_my_devices",
+          "template": "add_devices"
+        }
+      ],
+      "images": {
+        "large": "/drivers/stookalert/assets/images/large.png",
+        "small": "/drivers/stookalert/assets/images/small.png"
+      }
+    }
+  ]
+}
