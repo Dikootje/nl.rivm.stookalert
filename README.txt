@@ -1,1 +1,1 @@
-Adds RIVM alerts when it's discouraged to light the fireplace
+Adds RIVM alerts when it's discouraged to light a fireplace/firepit/BBQ in light of excessive airpolution 
