@@ -10,7 +10,7 @@ class StookalertDevice extends Homey.Device {
 	
 	async onInit() {
 		try {
-			this.log('StookalertDevice has been inited');
+			this.log('StookalertDevice has been initialized');
 			this.log('Name: ', this.getName());
 			this.log('Class: ', this.getClass());
 			this.log('Data: ', this.getData());
@@ -55,6 +55,8 @@ class StookalertDevice extends Homey.Device {
 				
 				if (!rivmstookalert || rivmstookalert.length === 0) {
 					this.error('No data found for province code', this.provincecode);
+					this.setCapabilityValue('alarm_generic', false);
+					this.setUnavailable('No data found for configured province');
 					return;
 				}
 				
