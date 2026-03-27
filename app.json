@@ -15,11 +15,8 @@
     "climate"
   ],
   "tags": {
-    "nl": [
-      "RIVM",
-      "Openhaard",
-      "StookAlert"
-    ]
+    "en": ["RIVM", "fireplace", "stookalert", "air quality"],
+    "nl": ["RIVM", "Openhaard", "StookAlert"]
   },
   "author": {
     "name": "D B",
@@ -34,8 +31,8 @@
   },
   "source": "https://github.com/Dikootje/nl.rivm.stookalert",
   "bugs": {
-    "url":"https://github.com/Dikootje/nl.rivm.stookalert/issues"
-  }
+    "url": "https://github.com/Dikootje/nl.rivm.stookalert/issues"
+  },
   "permissions": [],
   "images": {
     "large": "/assets/images/large.png",

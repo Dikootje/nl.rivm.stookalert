@@ -6,11 +6,11 @@ const fetch = require('node-fetch').default;
 const rivmurl = 'https://www.rivm.nl/media/lml/stookalert/stookalert_noalert.json';
 
 
-class MyDevice extends Homey.Device {
+class StookalertDevice extends Homey.Device {
 	
 	async onInit() {
 		try {
-			this.log('MyDevice has been inited');
+			this.log('StookalertDevice has been inited');
 			this.log('Name: ', this.getName());
 			this.log('Class: ', this.getClass());
 			this.log('Data: ', this.getData());
@@ -52,6 +52,12 @@ class MyDevice extends Homey.Device {
             .then(response => {
                 const rivmstookalert = response.filter(s => s.prvnr === this.provincecode);
 				this.log('Provincie code uit data', this.provincecode);
+				
+				if (!rivmstookalert || rivmstookalert.length === 0) {
+					this.error('No data found for province code', this.provincecode);
+					return;
+				}
+				
 				this.log('Gegevens van RIVM', rivmstookalert[0].waarde);
 				
 				this.setCapabilityValue("alarm_generic", (rivmstookalert[0].waarde == 1 ? true : false));
@@ -98,7 +104,7 @@ class MyDevice extends Homey.Device {
             .then(result => {
                 this.log('Cron job deleted successfully');
             }).catch(error => {
-                this.error(`Cron job deletion failed (${error}`);
+                this.error(`Cron job deletion failed (${error})`);
             });
     }
 	
@@ -121,4 +127,4 @@ class MyDevice extends Homey.Device {
 	
 }
 
-module.exports = MyDevice;
+module.exports = StookalertDevice;
