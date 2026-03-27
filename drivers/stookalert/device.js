@@ -2,7 +2,7 @@
 
 const Homey = require('homey');
 const uuid = require('uuid');
-const fetch = require('node-fetch').default;
+const fetch = require('node-fetch');
 const rivmurl = 'https://www.rivm.nl/media/lml/stookalert/stookalert_noalert.json';
 
 
@@ -55,9 +55,10 @@ class StookalertDevice extends Homey.Device {
 				
 				if (!rivmstookalert || rivmstookalert.length === 0) {
 					this.error('No data found for province code', this.provincecode);
-					this.setCapabilityValue('alarm_generic', false);
-					this.setUnavailable('No data found for configured province');
-					return;
+					return this.setCapabilityValue('alarm_generic', false)
+						.catch(err => this.error('Failed setting alarm_generic', err))
+						.then(() => this.setUnavailable('No data found for configured province'))
+						.catch(err => this.error('Failed setting unavailable', err));
 				}
 				
 				this.log('Gegevens van RIVM', rivmstookalert[0].waarde);
