@@ -1,1 +1,5 @@
-{}
+{
+  "error": {
+    "data_unavailable": "Error retrieving data"
+  }
+}
