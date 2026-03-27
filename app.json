@@ -32,6 +32,10 @@
       }
     }
   },
+  "source": "https://github.com/Dikootje/nl.rivm.stookalert",
+  "bugs": {
+    "url":"https://github.com/Dikootje/nl.rivm.stookalert/issues"
+  }
   "permissions": [],
   "images": {
     "large": "/assets/images/large.png",
